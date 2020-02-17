@@ -1,14 +1,18 @@
 #include<iostream>
+#include<functional>
 #include"hyper_array.cpp"
 
 using namespace std;
 
 int main(void) {
-    hyper_array<int, 3> array(3, 3, 3);
+    auto assign_from_stdin = [](int &var) -> void {
+        //cin >> var;
+        var = 3;
+    };
 
-    for (int i = 0; i < 3; i ++) {
-        array[i][i][i] = 1;
-    }
+    array<size_t, 3> sizes = { 3, 3, 3 };
+
+    hyper_array<int, 3> array(assign_from_stdin, sizes);
 
     // Print Cube!!
     for (int i = 0; i < 3; i ++) {
@@ -19,8 +23,6 @@ int main(void) {
         }
         cout << endl;
     }
-    
-    cout << array.size(3) << endl; // 3
 
     return 0;
 }
