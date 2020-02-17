@@ -13,4 +13,4 @@ To-do
 - Multidimensional segment tree.
 
 
-You should compile the code with an option 'std=c++14' or something upper.
+You should compile the code with an option 'std=c++17' or something upper.
